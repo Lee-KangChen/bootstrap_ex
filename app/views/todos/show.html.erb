@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
+<html>
+  <body>
+    <div id="main-container" class="container">
+      <div class="row">
+        <div id="sidebar" class="col-xs-3">
+          <!-- sidebar content -->
+          <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo.title %>
-</p>
+          <p>
+            <strong>Title:</strong>
+            <%= @todo.title %>
+          </p>
+          <p>
+            <strong>Notes:</strong>
+            <%= @todo.notes %>
+          </p>
 
-<p>
-  <strong>Notes:</strong>
-  <%= @todo.notes %>
-</p>
+        </div>
+        <div id="content" class="col-xs-9">
+          <!--  main content -->
+          <%= link_to 'Edit', edit_todo_path(@todo) %> |
+          <%= link_to 'Back', todos_path %>
 
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
